@@ -3,15 +3,15 @@ const auth = require('../middleware/authentication');
 
 async function retrievelog(plantId){
 
-    const jwt = await auth();
-
-    try{
-        let plant = await axios.get(`http://localhost:1337/plants/${plantId}`, {
+  try{
+      const jwt = await auth();
+      
+      let plant = await axios.get(`http://localhost:1337/plants/${plantId}`, {
             headers: {  
               Authorization:
                 'Bearer '+jwt
-            }
-          });
+          }
+        });
         return plant.data.activities.log
     }
     catch(err){

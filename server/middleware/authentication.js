@@ -18,13 +18,6 @@ const axios = require('axios');
         })
 
         return data;
-
-    
-
-    //return Promise.resolve(data)
-
-    
-    
 }
 
 module.exports = authenticate
