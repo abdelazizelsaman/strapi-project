@@ -5,10 +5,8 @@ Router.get('/',  async (req, res) =>{
 
     let body = req.body;
     let plantId = body.plantId;
-    let log = await retrievelog(plantId);
-    
-    let print = JSON.stringify(log)
-    res.status(200).send(`${plantId} \n ${print}`)
+    let response = await retrievelog(plantId);
+    res.status(200).send(`${JSON.stringify(response)}`)
 
 })
 

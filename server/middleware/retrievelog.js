@@ -12,10 +12,7 @@ async function retrievelog(plantId){
                 'Bearer '+jwt
             }
           });
-
-        console.log(plant.data.activities)
-
-        return plant.data.activities
+        return plant.data.activities.log
     }
     catch(err){
         console.log(err.response)

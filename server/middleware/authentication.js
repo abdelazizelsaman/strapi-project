@@ -11,7 +11,6 @@ const axios = require('axios');
             identifier: user,
             password: password
         }).then( (res)=>{
-            console.log(res.data.jwt)
             return res.data.jwt;
         }).catch( (err) =>{
             console.log(err)
