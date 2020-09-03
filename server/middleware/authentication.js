@@ -6,11 +6,6 @@ const axios = require('axios');
 
     let url = "http://localhost:1337/auth/local"
 
-    // const data = axios.post(url,{
-    //     identifier: user,
-    // password: password,
-    // });
-
     const data = axios.post(url,
         {
             identifier: user,

@@ -18,12 +18,12 @@ async function addactivity(activityname, plants){
                 await axios.put(`http://localhost:1337/plants/${plants[i]}`,{headers:{
                     Authorization:
                     'Bearer '+jwt
-                }}, {body:{
-                    "activities": {activityname}
-                }} )
+                },
+                activities: activityname
+                 })
             }
         }catch(err){
-            console.log(err)
+            console.log(err.response)
         }
 
   

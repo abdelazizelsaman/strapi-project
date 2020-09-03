@@ -1,15 +1,14 @@
-const addactivity = require('../middleware/addactivity');
+const retrievelog = require('../middleware/retrievelog');
 const Router  = require("express").Router();
 
-Router.post('/',  async (req, res) =>{
+Router.get('/',  async (req, res) =>{
 
     let body = req.body;
-    let activityName = body.activity;
-    let plants = body.plants;
-    let plant = await addactivity(activityName, plants);
+    let plantId = body.plantId;
+    let log = await retrievelog(plantId);
     
-    let print = JSON.stringify(plant)
-    res.status(200).send(`${activityName}\n ${plants} \n ${print}`)
+    let print = JSON.stringify(log)
+    res.status(200).send(`${plantId} \n ${print}`)
 
 })
 
